@@ -2,6 +2,10 @@
 
 This project is a simple web application for estimating the volume of a surfboard based on its dimensions: height, width, and thickness.
 
+[Surfboard Volume Calculator Link](https://localastronaut.github.io/Surfboard-Volume-Calculator/)
+
+
+
 ## Overview
 
 The application is a single HTML page that includes a form for entering the dimensions of a surfboard and a JavaScript function that calculates the estimated volume using a linear regression model. The form includes dropdown lists for the height (in feet and inches), width, and thickness (in inches, with quarter-inch increments).
