@@ -2,7 +2,7 @@
 
 This project is a simple web application for estimating the volume of a surfboard based on its dimensions: height, width, and thickness.
 
-[Surfboard Volume Calculator Link](https://localastronaut.github.io/Surfboard-Volume-Calculator/)
+[Surfboard Volume Predictor](https://localastronaut.github.io/Surfboard-Volume-Calculator/)
 
 
 
@@ -19,6 +19,23 @@ The application is built entirely with HTML, CSS, and JavaScript:
 - HTML5: structure of the webpage
 - CSS (Bootstrap 4): styling of the webpage
 - JavaScript: functionality to calculate and display the estimated volume
+
+## Linear Regression Model
+
+The application calculates the volume of a surfboard based on the height, width, and thickness of the surfboard. The volume is calculated using a formula:
+
+volume = 0.69 * height - 0.99 * width + 22.05 * thickness - 54.23
+
+This formula is a representation of a multi-variable linear regression model. In linear regression, we try to model the relationship between two or more features and a response by fitting a linear equation to observed data. Here, the features are the dimensions of the surfboard (height, width, thickness), and the response is the volume of the surfboard.
+
+Here's how each part of the formula corresponds to a component of a linear regression model:
+
+- The values 0.69, -0.99, and 22.05 are the coefficients of the independent variables (height, width, thickness). These coefficients determine the effect of each dimension on the volume of the surfboard.
+- The constant term -54.23 is the y-intercept of the model. It represents the value of the dependent variable (volume) when all the independent variables are 0.
+
+The model assumes that the relationship between each dimension and the volume is linear, and the coefficients and constant term are presumably determined through a process of training a linear regression model on a set of data where the dimensions and volumes of various surfboards are known. However, in this application, the model is static and does not update or learn from new data over time.
+
+
 
 ## How to Use
 
