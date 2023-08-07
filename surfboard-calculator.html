@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Surfboard Volume Prediction</title>
+</head>
+<body>
+<div class="container">
+    <h2 class="my-4">Surfboard Volume Prediction</h2>
+    <form action="">
+        <div class="form-group">
+            <label for="feet">Height (Feet):</label>
+            <select id="feet" name="feet" class="form-control">
+                <!-- JavaScript will fill this in -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="inches">Height (Inches):</label>
+            <select id="inches" name="inches" class="form-control">
+                <!-- JavaScript will fill this in -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="width">Width (inches):</label>
+            <select id="width" name="width" class="form-control">
+                <!-- JavaScript will fill this in -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="thickness">Thickness (inches):</label>
+            <select id="thickness" name="thickness" class="form-control">
+                <!-- JavaScript will fill this in -->
+            </select>
+        </div>
+        <input type="button" value="Calculate" onClick="calculateVolume()" class="btn btn-primary">
+    </form>
+    <p id="result" class="my-4"></p>
+</div>
+
+<script>
+for (var i = 5; i <= 10; i++) {
+    var option = document.createElement("option");
+    option.value = i;
+    option.text = i + "'";
+    document.getElementById("feet").appendChild(option);
+}
+
+for (var i = 0; i <= 11; i++) {
+    var option = document.createElement("option");
+    option.value = i;
+    option.text = i + "\"";
+    document.getElementById("inches").appendChild(option);
+}
+
+for (var i = 15; i <= 25; i += 0.25) {
+    var option = document.createElement("option");
+    option.value = i;
+    option.text = i + "\"";
+    document.getElementById("width").appendChild(option);
+}
+
+for (var i = 1; i <= 4; i += 0.25) {
+    var option = document.createElement("option");
+    option.value = i;
+    option.text = i + "\"";
+    document.getElementById("thickness").appendChild(option);
+}
+
+function calculateVolume() {
+    var feet = document.getElementById('feet').value;
+    var inches = document.getElementById('inches').value;
+    var width = document.getElementById('width').value;
+    var thickness = document.getElementById('thickness').value;
+
+    var heightInches = feet * 12 + parseInt(inches);
+    var widthInches = parseFloat(width);
+    var thicknessInches = parseFloat(thickness);
+
+    var volume = 0.69 * heightInches - 0.99 * widthInches + 22.05 * thicknessInches - 54.23;
+
+    document.getElementById("result").innerHTML = "<strong>Estimated volume:</strong> " + volume.toFixed(2) + " L";
+}
+</script>
+
+</body>
+</html>
